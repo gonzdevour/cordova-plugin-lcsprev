@@ -1,0 +1,19 @@
+{
+  "name": "cordova-plugin-lcs",
+  "version": "0.2.4",
+  "description": "",
+  "cordova": {
+    "id": "cordova-plugin-lcs",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "author": "",
+  "license": "ISC"
+}

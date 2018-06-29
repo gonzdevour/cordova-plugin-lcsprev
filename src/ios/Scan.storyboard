@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acP-Zm-6OR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scaning..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ax5-Nx-R2N">
+                                <rect key="frame" x="134" y="619" width="146" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BbW-OM-nnm">
+                                <rect key="frame" x="24" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="ilC-yR-0YY"/>
+                                    <constraint firstAttribute="height" constant="30" id="mbe-US-ZEe"/>
+                                </constraints>
+                                <state key="normal" title="X" image="close_icon.png">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleButtonCancel:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="8sm-Z3-rzg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPz-sQ-lNL">
+                                <rect key="frame" x="360" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="KoI-UA-yZJ"/>
+                                    <constraint firstAttribute="height" constant="30" id="VWH-mw-pLK"/>
+                                </constraints>
+                                <state key="normal" title="Switch" image="camera_switch_icon.png">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleButtonSwitch:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="66l-El-vv7"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rectangular_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="80S-tO-6aO">
+                                <rect key="frame" x="67" y="228" width="280" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="71B-hf-4KH"/>
+                                    <constraint firstAttribute="height" constant="280" id="IHy-ea-SuF"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xPz-sQ-lNL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="4ot-ei-Af2"/>
+                            <constraint firstItem="acP-Zm-6OR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8eP-Zh-2kr"/>
+                            <constraint firstItem="BbW-OM-nnm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="EUE-Wi-10o"/>
+                            <constraint firstItem="acP-Zm-6OR" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="JiC-Wy-p1m"/>
+                            <constraint firstItem="acP-Zm-6OR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LTA-dY-5DK"/>
+                            <constraint firstItem="80S-tO-6aO" firstAttribute="centerY" secondItem="acP-Zm-6OR" secondAttribute="centerY" id="OkR-cl-csg"/>
+                            <constraint firstItem="80S-tO-6aO" firstAttribute="centerX" secondItem="acP-Zm-6OR" secondAttribute="centerX" id="ROP-ae-Wxc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ax5-Nx-R2N" secondAttribute="bottom" constant="76" id="S7u-NS-4b0"/>
+                            <constraint firstItem="Ax5-Nx-R2N" firstAttribute="centerX" secondItem="acP-Zm-6OR" secondAttribute="centerX" id="arV-7k-Hrn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xPz-sQ-lNL" secondAttribute="trailing" constant="4" id="h98-zb-Td9"/>
+                            <constraint firstItem="acP-Zm-6OR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xGL-nn-xEP"/>
+                            <constraint firstItem="BbW-OM-nnm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="xbn-3o-0oq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="BbW-OM-nnm" id="zNS-Wt-Gom"/>
+                        <outlet property="resultView" destination="Ax5-Nx-R2N" id="8bB-9c-lm5"/>
+                        <outlet property="scanView" destination="acP-Zm-6OR" id="Jxh-9M-7bx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera_switch_icon.png" width="512" height="512"/>
+        <image name="close_icon.png" width="720" height="720"/>
+        <image name="rectangular_icon.png" width="512" height="512"/>
+    </resources>
+</document>

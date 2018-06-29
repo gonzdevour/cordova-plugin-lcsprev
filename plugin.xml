@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-lcr" version="0.2.4"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>lcr</name>
+    <js-module name="lcr" src="www/lcr.js">
+        <clobbers target="lcr" />
+    </js-module>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="lcr">
+                <param name="ios-package" value="lcr" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/lcr.h" />
+        <source-file src="src/ios/lcr.m" />
+        <header-file src="src/ios/ViewController.h" />
+        <source-file src="src/ios/ViewController.m" />
+        <header-file src="src/ios/LightCodeOOKLibrary.h" />
+        <source-file src="src/ios/LightCodeOOKLibrary.a" framework="true" />
+        <framework src="src/ios/opencv2.framework" custom="true"/>
+        <framework src="libc++.tbd" />
+        <resource-file src="src/ios/close_icon.png" />
+        <resource-file src="src/ios/rectangular_icon.png" />
+        <resource-file src="src/ios/camera_switch_icon.png" />
+        <resource-file src="src/ios/Scan.storyboard" />
+        
+        <preference name="CAMERA_USAGE_DESCRIPTION" default="This app needs camera access"/>
+        <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+            <string>$CAMERA_USAGE_DESCRIPTION</string>
+        </config-file>
+        
+        <preference name="MICROPHONE_USAGE_DESCRIPTION" default="This app needs microphone access"/>
+        <config-file target="*-Info.plist" parent="NSMicrophoneUsageDescription">
+            <string>$MICROPHONE_USAGE_DESCRIPTION</string>
+        </config-file>
+        
+        <preference name="PHOTOLIBRARY_ADD_USAGE_DESCRIPTION" default="This app needs write-access to photo library"/>
+        <config-file target="*-Info.plist" parent="NSPhotoLibraryAddUsageDescription">
+            <string>$PHOTOLIBRARY_ADD_USAGE_DESCRIPTION</string>
+        </config-file>
+        
+        <preference name="PHOTOLIBRARY_USAGE_DESCRIPTION" default="This app needs read/write-access photo library access"/>
+        <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
+            <string>$PHOTOLIBRARY_USAGE_DESCRIPTION</string>
+        </config-file>
+    </platform>
+    
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="lcr">
+                <param name="android-package" value="org.iii.plugin.lcr.lcr" />
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.VIBRATE" />
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="org.iii.plugin.lcr.ScanCamera2Activity" android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar.Fullscreen" />
+        </config-file>
+        <source-file src="src/android/lcr.java" target-dir="src/org/iii/plugin/lcr" />
+        <source-file src="src/android/ScanCamera2Activity.java" target-dir="src/org/iii/plugin/lcr" />
+        <source-file src="src/android/LightCodeRecognition.jar" target-dir="libs" />
+		<source-file src="src/android/armeabi/libMyOpencvLibs.so" target-dir="libs/armeabi" />
+		<source-file src="src/android/armeabi-v7a/libMyOpencvLibs.so" target-dir="libs/armeabi-v7a" />
+		<framework src="src/android/plugin.gradle" custom="true" type="gradleReference"/>
+        <source-file src="src/android/close_icon.png" target-dir="res/drawable" />
+        <source-file src="src/android/rectangular_icon.png" target-dir="res/drawable" />
+        <source-file src="src/android/camera_switch_icon.png" target-dir="res/drawable" />
+    </platform>
+</plugin>

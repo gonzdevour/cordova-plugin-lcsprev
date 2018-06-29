@@ -1,0 +1,11 @@
+repositories {
+    jcenter()
+    maven {
+        url  "http://dl.bintray.com/steveliles/maven"
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:26.1.0'
+}
+
